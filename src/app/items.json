@@ -1,0 +1,15 @@
+{
+  "list":{
+ "title":"Welcome ! Your Book Store" ,
+ "info":"You can choose your book" ,
+ "inputType":"book-store" ,
+ "values": [
+    {"name":"Select All" , "checked":false},
+    {"name":"Experience" , "checked":false},
+    {"name":"Efficiency" , "checked":false},
+    {"name":"Resilience" , "checked":false},
+    {"name":"Sustainable" , "checked":false}
+   
+ ] 
+}
+}

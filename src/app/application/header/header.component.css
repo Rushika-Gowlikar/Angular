@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    background-color: #615EFC;
+    color: #fff;
+    padding: 23px;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+    
+
+}
+a{
+   cursor: pointer;
+   padding: 3px 9px;
+   background-color: #dff3cd;
+   font-weight: 600;
+   color: #0704c1;
+   border: none;
+   border-radius: 3px;
+   text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+    padding: 3px 9px;
+    background-color:  #0704c1;
+    border: none;
+    color: #dff3cd;
+    box-shadow: 2px 2px 4px #9694f5 ;
+    border-radius: 3px;
+ }

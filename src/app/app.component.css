@@ -1,0 +1,10 @@
+
+.container{
+    position: relative;
+    padding-bottom: 57px;
+    height: auto;
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x:hidden ;
+    
+}

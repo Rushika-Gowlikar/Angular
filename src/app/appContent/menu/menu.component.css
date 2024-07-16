@@ -1,0 +1,56 @@
+.container{
+    position: relative;
+    width: 100%;
+   object-fit: cover;
+
+}
+
+ul{
+    list-style-type: none;
+    text-align: center;
+    padding: 0px;
+    width: 100%;
+    margin: 0;
+}
+li:nth-child(n+1) button{
+    list-style: none;
+    padding: 51px 0px;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 9px;
+    background-color: rgb(191, 230, 180);
+  
+}
+li:nth-child(2n+1) button{
+    list-style: none;
+    padding:49px 0px;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 9px;
+    background-color: rgb(91, 187, 236);
+  
+}
+li:nth-child(n+1) button:hover{
+    list-style: none;
+    padding:49px 0px;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 9px;
+    background-color:#5A639C;
+  
+}
+li:nth-child(2n+1) button:hover{
+    list-style: none;
+    padding:49px 0px;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 9px;
+    background-color: rgb(4, 115, 171);
+  
+}
+li button:hover{
+   color: aliceblue; 
+}
+li button{
+    color: black; 
+ }

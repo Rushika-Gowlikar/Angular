@@ -1,0 +1,166 @@
+<div class="row">
+  <div class="col left">
+    <form [formGroup]="regForm" class="form" (ngSubmit)="submit()">
+      <h2 class="text">Angular Reactive Form</h2>
+      <div class="form-group">
+        <div>
+          <label class="required firstName">First Name</label>
+          <input type="text" formControlName="firstName" class="form-control" />
+          <span
+            class="error-text"
+            *ngIf="
+              regForm.get('firstName')?.touched &&
+              !regForm.get('firstName')?.valid
+            "
+          >
+            <span *ngIf="!regForm.get('firstName').value">
+              First name required</span
+            >
+          </span>
+        </div>
+        <div>
+          <label class="required lastName">Last Name</label>
+          <input type="text" formControlName="lastName" class="form-control" />
+          <p
+            class="error-text"
+            *ngIf="
+              regForm.get('lastName')?.touched &&
+              !regForm.get('lastName')?.valid
+            "
+          >
+            Last name required
+          </p>
+        </div>
+        <div>
+          <label class="required email">Email Id </label>
+          <input type="email" formControlName="email" class="form-control" />
+          <p
+            class="error-text"
+            *ngIf="
+              regForm.get('email')?.touched && !regForm.get('email')?.valid
+            "
+          >
+            Email name required or Email is invalid
+          </p>
+        </div>
+        <div>
+          <label class="required password">Password </label>
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control"
+          />
+          <span
+            class="error-text"
+            *ngIf="
+              regForm.get('password')?.touched &&
+              !regForm.get('password')?.valid
+            "
+            ><span *ngIf="!regForm.get('password').value"
+              >Password required</span
+            >
+            <span *ngIf="regForm.get('password').errors.minlength">
+              Characters should be greater than
+              {{
+                regForm.get("password").errors.minlength.requiredLength
+              }}</span
+            >
+          </span>
+        </div>
+        <div>
+          <label class="required cp">Confirm Password </label>
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            class="form-control"
+          />
+          <span
+            class="error-text"
+            *ngIf="
+              regForm.get('confirmPassword')?.touched &&
+              !regForm.get('confirmPassword')?.valid
+            "
+            ><span *ngIf="!regForm.get('confirmPassword').value"
+              >Confirm password and Password should be same</span
+            >
+            <span *ngIf="regForm.get('confirmPassword').errors.minlength">
+              Characters should be greater than
+              {{
+                regForm.get("confirmPassword").errors.minlength.requiredLength
+              }}</span
+            >
+          </span>
+        </div>
+        <div>
+          <label class="required cp">User Comment </label>
+          <textarea
+            type="text"
+            formControlName="userComment"
+            class="form-control"
+          ></textarea>
+          <span
+            class="error-text"
+            *ngIf="
+              regForm.get('userComment')?.touched &&
+              !regForm.get('userComment')?.valid
+            "
+            ><span *ngIf="!regForm.get('userComment').value">mandatory</span>
+            <span *ngIf="regForm.get('userComment').errors.minlength">
+              Characters should be greater than
+              {{
+                regForm.get("userComment").errors.minlength.requiredLength
+              }}</span
+            >
+          </span>
+        </div>
+      </div>
+      <div class="action">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          (click)="submit()"
+          [disabled]="!regForm.valid"
+          [ngClass]="{ 'disabled-btn': !regForm.valid }"
+        >
+          Register
+        </button>
+        <!-- <button class="btn btn-warning" (click)="reset()">Reset</button> -->
+      </div>
+    </form>
+  </div>
+  <div class="col right">
+    <span class="emptyDetails" *ngIf="emptyDetails">
+      <img src="../../../assets/emptyDetails.png" />
+    </span>
+    <span *ngIf="!emptyDetails">
+      <strong>List of Added Details</strong>
+      <div *ngFor="let details of cardView">
+        <div class="card">
+          <strong>{{
+            details["firstName"]?.length > 30
+              ? (details["firstName"] | slice : 0 : 30) + "..."
+              : details["firstName"]
+          }}</strong
+          ><br />
+          <strong>{{
+            details["lastName"]?.length > 30
+              ? (details["lastName"] | slice : 0 : 30) + "..."
+              : details["lastName"]
+          }}</strong
+          ><br />
+          <strong>{{
+            details["email"]?.length > 30
+              ? (details["email"] | slice : 0 : 30) + "..."
+              : details["email"]
+          }}</strong>
+          <br />
+          <strong>{{
+            details["userComment"]?.length > 30
+              ? (details["userComment"] | slice : 0 : 30) + "..."
+              : details["userComment"]
+          }}</strong>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
