@@ -11,5 +11,6 @@ export class BookReaderComponent implements OnInit {
 
   ngOnInit() {
     this.list = BOOKJSON['default'].list.values;
+    console.log(this.list);
   }
 }

@@ -1,7 +1,11 @@
-<p>tag-suggest-multi-select works!</p>
-<div>
+<div class="container">
   <div (mouseleave)="showDropDown = false">
-    <button class="txt" (click)="showDropDown = !showDropDown"></button>
+    <button class="txt" (click)="showDropDown = !showDropDown">
+      <span *ngIf="unique.length > 0"
+        ><i>Selected {{ unique }}</i></span
+      >
+      <span *ngIf="unique.length === 0"><i>To Be Select</i></span>
+    </button>
   </div>
   <label *ngFor="let a of list">
     <input

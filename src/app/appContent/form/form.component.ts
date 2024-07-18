@@ -23,10 +23,19 @@ export class FormComponent implements OnInit {
       {
         firstName: new FormControl(null, [Validators.required]),
         lastName: new FormControl(null, [Validators.required]),
-        email: new FormControl(null, [Validators.email]),
-        password: new FormControl(null, [Validators.minLength(8)]),
-        confirmPassword: new FormControl(null, [Validators.minLength(8)]),
-        userComment: new FormControl(null, [Validators.minLength(8)]),
+        email: new FormControl(null, [Validators.email, Validators.required]),
+        password: new FormControl(null, [
+          Validators.minLength(8),
+          Validators.required,
+        ]),
+        confirmPassword: new FormControl(null, [
+          Validators.minLength(8),
+          Validators.required,
+        ]),
+        userComment: new FormControl(null, [
+          Validators.minLength(8),
+          Validators.required,
+        ]),
       },
       {
         validators: this.passwordMismatchCheck,

@@ -5,10 +5,10 @@
  "inputType":"book-store" ,
  "values": [
     {"name":"Select All" , "checked":false},
-    {"name":"Experience" , "checked":false},
-    {"name":"Efficiency" , "checked":false},
-    {"name":"Resilience" , "checked":false},
-    {"name":"Sustainable" , "checked":false}
+    {"name":"TBD1" , "checked":false},
+    {"name":"TBD2" , "checked":false},
+    {"name":"TBD3" , "checked":false},
+    {"name":"TBD4" , "checked":false}
    
  ] 
 }
