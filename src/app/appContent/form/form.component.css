@@ -81,7 +81,13 @@
     border-radius: 4px;
 }
 .right{
+    display: flex;
     text-align: center;
+    background-color: #bfe4e8;
+    color: #113178d1;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
 }
 img{
 margin-top: 20px;

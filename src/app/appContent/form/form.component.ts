@@ -41,6 +41,7 @@ export class FormComponent implements OnInit {
         validators: this.passwordMismatchCheck,
       }
     );
+    console.log(this.regForm);
   }
   passwordMismatchCheck(form: FormGroup) {
     const password = form.get('password');
