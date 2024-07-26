@@ -12,6 +12,8 @@ import { FormComponent } from './appContent/form/form.component';
 import { NotFoundComponent } from './appContent/not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TagSuggestMultiSelectComponent } from './appContent/tag-suggest-multi-select/tag-suggest-multi-select.component';
+import { TodoListComponent } from './appContent/todo-list/todo-list.component';
+import { TodoFormComponent } from './appContent/todo-form/todo-form.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { TagSuggestMultiSelectComponent } from './appContent/tag-suggest-multi-s
     FormComponent,
     NotFoundComponent,
     TagSuggestMultiSelectComponent,
+    TodoListComponent,
+    TodoFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

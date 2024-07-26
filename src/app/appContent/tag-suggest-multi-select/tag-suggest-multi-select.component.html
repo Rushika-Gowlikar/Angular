@@ -6,19 +6,22 @@
       >
       <span *ngIf="unique.length === 0"><i>To Be Select</i></span>
     </button>
+
+    <div *ngIf="showDropDown">
+      <label *ngFor="let a of list" class="dropdown-content">
+        <input
+          type="checkbox"
+          (change)="getSelectedValue(a.checked, a.name)"
+          [(ngModel)]="a.checked"
+        />
+        <span
+          [ngStyle]="{
+            'background-color': a.checked ? '#F6F7F8' : '#d6ecbf',
+            color: a.checked ? '#4b4bc7' : 'black'
+          }"
+          >{{ a.name }}</span
+        >
+      </label>
+    </div>
   </div>
-  <label *ngFor="let a of list">
-    <input
-      type="checkbox"
-      (change)="getSelectedValue(a.checked, a.name)"
-      [(ngModel)]="a.checked"
-    />
-    <span
-      [ngStyle]="{
-        'background-color': a.checked ? '#F6F7F8' : 'white',
-        color: a.checked ? '#4b4bc7' : 'black'
-      }"
-      >{{ a.name }}</span
-    >
-  </label>
 </div>

@@ -9,7 +9,7 @@ export class TagSuggestMultiSelectComponent implements OnInit {
   @Input() list: any[];
   showDropDown: boolean;
   unique: any[];
-  checkedList: any[];
+  checkedList = [];
   allCheck: any[];
   finalVal1: any[];
   finalVal2: any[];
@@ -36,6 +36,7 @@ export class TagSuggestMultiSelectComponent implements OnInit {
       } else {
         if (status == true) {
           this.allCheck = [];
+
           if (this.checkedList && this.checkedList.length) {
             var valuePresent = false;
             for (var i = 0; i < this.checkedList.length; i++) {
