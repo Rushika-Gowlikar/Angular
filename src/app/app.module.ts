@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TagSuggestMultiSelectComponent } from './appContent/tag-suggest-multi-select/tag-suggest-multi-select.component';
 import { TodoListComponent } from './appContent/todo-list/todo-list.component';
 import { TodoFormComponent } from './appContent/todo-form/todo-form.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,13 @@ import { TodoFormComponent } from './appContent/todo-form/todo-form.component';
     TodoListComponent,
     TodoFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

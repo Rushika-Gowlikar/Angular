@@ -17,6 +17,7 @@ export class FormComponent implements OnInit {
   emptyDetails: boolean = true;
   cardView: {}[] = [];
   data: any;
+  removeIndex: any;
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
     this.regForm = new FormGroup(
@@ -61,5 +62,12 @@ export class FormComponent implements OnInit {
     this.cardView.push(this.regForm.value);
 
     this.regForm.reset();
+  }
+  deleteForm(deleteform) {
+    this.removeIndex = this.cardView.indexOf(deleteform);
+    this.cardView.splice(this.removeIndex, 1);
+    if (this.cardView.length <= 0) {
+      this.emptyDetails = true;
+    }
   }
 }

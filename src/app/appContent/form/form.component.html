@@ -80,9 +80,7 @@
               regForm.get('confirmPassword')?.touched &&
               !regForm.get('confirmPassword')?.valid
             "
-            ><span *ngIf="!regForm.get('confirmPassword').value"
-              >Confirm password and Password should be same</span
-            >
+          >
             <span *ngIf="regForm.get('confirmPassword').errors.minlength">
               Characters should be greater than
               {{
@@ -138,12 +136,16 @@
   </div>
   <div class="col right">
     <span class="emptyDetails" *ngIf="emptyDetails">
+      <mat-icon class="emptyFiles">description</mat-icon>
       No forms are submitted!</span
     >
     <span *ngIf="!emptyDetails">
       <strong>List of Added Form Details</strong>
       <div *ngFor="let details of cardView">
         <div class="card">
+          <mat-icon class="delete-icon" (click)="deleteForm(details)"
+            >delete</mat-icon
+          >
           <strong>{{
             details["firstName"]?.length > 30
               ? (details["firstName"] | slice : 0 : 30) + "..."

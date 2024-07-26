@@ -94,3 +94,19 @@ margin-top: 20px;
 width: 300px;
 height: 400px;
 }
+.delete-icon{
+    font-size: smaller;
+    float: right;
+}
+.emptyDetails{
+    color: #5592d8;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+}
+.emptyFiles{
+    position: relative;
+ bottom:30px;
+ left: 110px;
+   color: #538813;
+   font-size: 40px;
+}
