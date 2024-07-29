@@ -23,5 +23,10 @@
         >
       </label>
     </div>
+    <button class="button" *ngFor="let d of unique">
+      <span (click)="removeStatus(d)"
+        >{{ d }} <mat-icon class="close">close</mat-icon></span
+      >
+    </button>
   </div>
 </div>

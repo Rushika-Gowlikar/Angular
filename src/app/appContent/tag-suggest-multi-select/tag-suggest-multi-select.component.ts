@@ -111,4 +111,14 @@ export class TagSuggestMultiSelectComponent implements OnInit {
       }
     }
   }
+
+  removeStatus(d) {
+    this.getSelectedValue(false, d);
+
+    for (var i = 0; i < this.list.length; i++) {
+      if (this.list[i].name === d) {
+        this.list[i].checked = false;
+      }
+    }
+  }
 }

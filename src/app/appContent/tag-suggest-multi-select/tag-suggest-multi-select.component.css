@@ -21,3 +21,16 @@
     width: 100%;
     background-color: #d6ecbf;
 }
+.button{
+    background-color: rgb(110, 189, 110);
+    color: white;
+    border-radius: 30%;
+    padding: 8px 22px 0px 22px;
+    border: 2px solid white;
+}
+.close{
+    font-size: 14px;
+}
+.button:hover{
+background-color: rgb(249, 120, 120);
+}

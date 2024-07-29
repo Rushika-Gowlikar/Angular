@@ -3,3 +3,19 @@
     border: 10px solid rgb(87, 140, 8);
     
 }
+.arrow{
+    position: relative;
+    left: 50%;
+    animation: slideTop 1s ease-in-out infinite;
+
+}
+
+@keyframes slideTop {
+    0%,
+    100%{
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(0,10px);
+    }
+}
