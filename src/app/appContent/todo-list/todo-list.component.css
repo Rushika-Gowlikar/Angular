@@ -1,0 +1,29 @@
+
+.container{
+    display: inline-flex;
+    background-color: rgb(143, 182, 244);
+    color: rgb(1, 37, 83);
+    border-left: 4px solid rgb(2, 13, 30);
+    padding: 50px 15px;
+    max-width: 284px;
+    text-align: center;
+    min-height: 170px;
+    border-radius: 4px;
+    margin: 5px;
+    font-size: larger;
+}
+
+.container:hover{
+    display: inline-flex;
+    background-color: rgb(2, 13, 30) ;
+    color: rgb(170, 197, 232); 
+    border-left: 4px solid rgb(143, 182, 244);
+    padding: 50px 15px;
+    max-width: 284px;
+    text-align: center;
+    min-height: 170px;
+    border-radius: 4px;
+    margin: 5px;
+    font-size: larger;
+ }
+ 

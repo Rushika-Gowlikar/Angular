@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'pp-tag-suggest',
   templateUrl: './tag-suggest-multi-select.component.html',
   styleUrls: ['./tag-suggest-multi-select.component.css'],
 })
-export class TagSuggestMultiSelectComponent implements OnInit {
+export class TagSuggestMultiSelectComponent implements OnInit, DoCheck {
   @Input() list: any[];
   showDropDown: boolean;
   unique: any[];
@@ -15,6 +15,9 @@ export class TagSuggestMultiSelectComponent implements OnInit {
   finalVal2: any[];
   constructor() {}
 
+  ngDoCheck() {
+    console.log(this.list);
+  }
   ngOnInit(): void {
     if (this.unique != null) {
       this.unique;

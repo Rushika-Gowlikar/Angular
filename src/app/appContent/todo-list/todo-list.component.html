@@ -1,7 +1,5 @@
-<table>
-  <tr *ngFor="let v of todo">
-    {{
-      v
-    }}
-  </tr>
-</table>
+<div class="boxes">
+  <div class="container" *ngFor="let item of quotes | keyvalue">
+    <span>{{ item.value["text"] }}</span>
+  </div>
+</div>

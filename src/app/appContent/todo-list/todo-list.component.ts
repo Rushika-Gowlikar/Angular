@@ -6,11 +6,18 @@ import { AppContentService } from '../app-content.service';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
 })
-export class TodoListComponent implements OnInit {
-  todo: any = [];
-  constructor(private service: AppContentService) {}
+export class TodoFormComponent implements OnInit {
+  quotes: Object;
 
+  constructor(private service: AppContentService) {}
+  todo: any = [];
   ngOnInit(): void {
-    this.todo = this.service.addedTodos();
+    this.getQuots();
+  }
+
+  getQuots() {
+    this.service.getMethod().subscribe((data) => {
+      this.quotes = data;
+    });
   }
 }

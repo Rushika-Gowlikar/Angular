@@ -12,9 +12,9 @@ import { FormComponent } from './appContent/form/form.component';
 import { NotFoundComponent } from './appContent/not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TagSuggestMultiSelectComponent } from './appContent/tag-suggest-multi-select/tag-suggest-multi-select.component';
-import { TodoListComponent } from './appContent/todo-list/todo-list.component';
-import { TodoFormComponent } from './appContent/todo-form/todo-form.component';
+import { TodoFormComponent } from './appContent/todo-list/todo-list.component';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
     FormComponent,
     NotFoundComponent,
     TagSuggestMultiSelectComponent,
-    TodoListComponent,
+
     TodoFormComponent,
   ],
   imports: [
@@ -38,6 +38,7 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
