@@ -17,4 +17,7 @@ export class AppContentService {
   getMethod() {
     return this.http.get('https://type.fit/api/quotes');
   }
+  getContent() {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts');
+  }
 }

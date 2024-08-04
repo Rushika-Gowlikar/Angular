@@ -15,6 +15,7 @@ import { TagSuggestMultiSelectComponent } from './appContent/tag-suggest-multi-s
 import { TodoFormComponent } from './appContent/todo-list/todo-list.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { TableViewComponent } from './appContent/table-view/table-view.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     TagSuggestMultiSelectComponent,
 
     TodoFormComponent,
+      TableViewComponent,
   ],
   imports: [
     BrowserModule,

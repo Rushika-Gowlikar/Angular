@@ -22,4 +22,7 @@ export class MenuComponent implements OnInit {
   goToGame() {
     window.location.href = '/game';
   }
+  goToTableView() {
+    window.location.href = '/table-view';
+  }
 }

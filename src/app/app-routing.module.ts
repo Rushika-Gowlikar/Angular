@@ -6,6 +6,7 @@ import { BookReaderComponent } from './appContent/book-reader/book-reader.compon
 import { CardViewComponent } from './appContent/card-view/card-view.component';
 import { FormComponent } from './appContent/form/form.component';
 import { NotFoundComponent } from './appContent/not-found/not-found.component';
+import { TableViewComponent } from './appContent/table-view/table-view.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'game',
     component: TicTacToeGameComponent,
+  },
+  {
+    path: 'table-view',
+    component: TableViewComponent,
   },
   {
     path: '**',
