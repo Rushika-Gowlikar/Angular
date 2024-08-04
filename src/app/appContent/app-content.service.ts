@@ -20,4 +20,7 @@ export class AppContentService {
   getContent() {
     return this.http.get('https://jsonplaceholder.typicode.com/posts');
   }
+  deleteContent(id) {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id);
+  }
 }

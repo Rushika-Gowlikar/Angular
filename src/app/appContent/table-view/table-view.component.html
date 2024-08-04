@@ -1,6 +1,17 @@
 <div class="container table-view" *ngIf="storedData; else emptyPage">
   <div class="headers">
     <h2 class="table-title">TABLE VIEW</h2>
+    <div class="input-group w-50">
+      <input
+        class="form-control"
+        type="text"
+        [(ngModel)]="searchInput"
+        (keyup)="getfilterData()"
+      />
+      <button class="btn btn-primary" (click)="getfilterData()">Search</button>
+      <button class="btn btn-secondary" (click)="sort('asc')">⬆️</button>
+      <button class="btn btn-secondary" (click)="sort('dsc')">⬇️</button>
+    </div>
     <button class="btn add">Add ROW DATA</button>
   </div>
   <table class="table">
@@ -21,7 +32,11 @@
         <td>{{ data.title }}</td>
         <td>{{ data.body }}</td>
         <td><button class="btn btn-primary">Edit</button></td>
-        <td><button class="btn btn-danger">Delete</button></td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteData(data)">
+            Delete
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
