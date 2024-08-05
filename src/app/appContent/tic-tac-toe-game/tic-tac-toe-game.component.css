@@ -11,7 +11,7 @@
 input{
     width: 30%;
     margin: 3px;
-    border: 3px solid orange;
+    border: 3px solid rgb(120, 30, 181);
     height: 34px;
     border-radius: 4px;
 }
@@ -41,3 +41,52 @@ h1{
     
     font-family:'Times New Roman', Times, serif;
 }
+.error-text{
+    color: red;
+}
+.invalid-input{
+    border: 3px red  solid;
+}
+/* .box{
+    height: 53px;
+    width: 49px;
+  background-color: rgb(187, 187, 232);
+}
+
+.box:hover{
+    height: 53px;
+    width: 49px;
+    padding: 0;
+    background-color: rgb(140, 218, 224);
+ }*/
+ .box{
+
+    padding: 13px;
+    color: #010f1e;
+    font-size: larger;
+}
+
+.box:hover{
+ background-color: rgb(199, 240, 116) !important;
+    
+ }
+ .boxes{
+    display: flex;
+    justify-content: center;
+ }
+
+ .c1{
+    width: 142px;
+    height: 142px;
+    display: flex;
+    flex-wrap: wrap;
+   
+  }
+  
+  .c1 > div {
+    text-align: center;
+    width: calc(99% / 3);
+    height: calc(99% / 3);
+    background-color: #9cdc9c;
+    border: solid #df1212 1px;
+  }

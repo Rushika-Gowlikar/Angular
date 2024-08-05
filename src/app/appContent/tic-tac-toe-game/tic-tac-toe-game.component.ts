@@ -8,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class TicTacToeGameComponent implements OnInit {
   constructor() {}
   playerDetails: any;
+  isStart: boolean = false;
   playerO: any;
   playerX: any;
+  text = 'Submit Player Names To Start Game!';
+  boxes = [null, null, null, 'X', null, null, null, 'O', null];
   ngOnInit(): void {}
   onSubmit(details) {
-    console.log(details);
-  }
-  submitDetails(details) {
-    console.log(details);
+    this.isStart = true;
+    this.text = this.isStart
+      ? 'let Start'
+      : 'Submit Player Names To Start Game!';
   }
 }

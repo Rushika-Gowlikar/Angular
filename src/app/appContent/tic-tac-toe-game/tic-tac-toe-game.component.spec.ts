@@ -8,9 +8,8 @@ describe('TicTacToeGameComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TicTacToeGameComponent ]
-    })
-    .compileComponents();
+      declarations: [TicTacToeGameComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

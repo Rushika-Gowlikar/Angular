@@ -1,6 +1,10 @@
 <div class="container w-100 h-100">
-  <h1 class="title">Submit Player Names To Start Game!</h1>
-  <form #playerDetails="ngForm" (ngSubmit)="onSubmit(playerDetails)">
+  <h1 class="title">{{ text }}</h1>
+  <form
+    #playerDetails="ngForm"
+    (ngSubmit)="onSubmit(playerDetails)"
+    *ngIf="!isStart"
+  >
     <div class="form-group">
       <label for="player-x">Player X</label>
       <input
@@ -11,7 +15,43 @@
         name="name-x"
         minlength="6"
         maxlength="12"
-      />
+        placeholder="Enter Player Name"
+        [ngClass]="{
+          'invalid-input':
+            !playerDetails.form.get('name-x')?.valid &&
+            playerDetails.form.get('name-x')?.touched
+        }"/>
+    
+      <div
+        *ngIf="
+          !playerDetails.form.get('name-x')?.valid &&
+          playerDetails.form.get('name-x')?.touched
+        "
+        class="error-text"
+      >
+        <span *ngIf="playerDetails.form.get('name-x').errors?.required"
+          >Mandatory Field</span
+        >
+        <span
+          *ngIf="
+            playerDetails.form.get('name-x').errors.minlength?.requiredLength
+          "
+        >
+          Characters should be greater than
+          {{
+            playerDetails.form.get("name-x").errors.minlength?.requiredLength
+          }}</span
+        >
+        <span
+          *ngIf="
+            playerDetails.form.get('name-x').errors.maxlength?.requiredLength
+          "
+        >
+          Characters should be less than{{
+            playerDetails.form.get("name-x").errors.maxlength?.requiredLength
+          }}</span
+        >
+      </div>
     </div>
 
     <br />
@@ -25,16 +65,64 @@
         name="name-o"
         minlength="6"
         maxlength="12"
+        placeholder="Enter Player Name"
+        [ngClass]="{
+          'invalid-input':
+            !playerDetails.form.get('name-o')?.valid &&
+            playerDetails.form.get('name-o')?.touched
+        }"
       />
+      <div
+        *ngIf="
+          !playerDetails.form.get('name-o')?.valid &&
+          playerDetails.form.get('name-o')?.touched
+        "
+        class="error-text"
+      >
+        <span *ngIf="playerDetails.form.get('name-o').errors?.required"
+          >Mandatory Field</span
+        >
+
+        <span
+          *ngIf="
+            playerDetails.form.get('name-o').errors.minlength?.requiredLength
+          "
+        >
+          Characters should be greater than
+          {{
+            playerDetails.form.get("name-o").errors.minlength?.requiredLength
+          }}</span
+        >
+        <span
+          *ngIf="
+            playerDetails.form.get('name-o').errors.maxlength?.requiredLength
+          "
+        >
+          Characters should be less than{{
+            playerDetails.form.get("name-o").errors.maxlength?.requiredLength
+          }}</span
+        >
+      </div>
     </div>
     <br />
     <button
       type="submit"
       class="btn btn-success"
-      (click)="submitDetails(playerDetails)"
       [disabled]="!playerDetails.form.valid"
     >
       Submit
     </button>
   </form>
+ 
+  <div *ngIf="isStart" class="boxes" >
+   
+    <div class="c1" >
+      <div *ngFor="let box of boxes" class="box">{{box}}</div>
+     
+    </div>
+  </div>
+
+
+
+
 </div>
