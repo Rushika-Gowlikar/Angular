@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TagSuggestMultiSelectComponent } from './appContent/tag-suggest-multi-select/tag-suggest-multi-select.component';
 import { TodoFormComponent } from './appContent/todo-list/todo-list.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { TableViewComponent } from './appContent/table-view/table-view.component';
 
@@ -32,7 +34,7 @@ import { TableViewComponent } from './appContent/table-view/table-view.component
     TagSuggestMultiSelectComponent,
 
     TodoFormComponent,
-      TableViewComponent,
+    TableViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,8 @@ import { TableViewComponent } from './appContent/table-view/table-view.component
     ReactiveFormsModule,
     MatIconModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,1 +1,40 @@
-<p>tic tac toe game</p>
+<div class="container w-100 h-100">
+  <h1 class="title">Submit Player Names To Start Game!</h1>
+  <form #playerDetails="ngForm" (ngSubmit)="onSubmit(playerDetails)">
+    <div class="form-group">
+      <label for="player-x">Player X</label>
+      <input
+        type="text"
+        id="player-x"
+        required
+        [(ngModel)]="playerX"
+        name="name-x"
+        minlength="6"
+        maxlength="12"
+      />
+    </div>
+
+    <br />
+    <div class="form-group">
+      <label for="player-o">Player O</label>
+      <input
+        type="text"
+        id="player-o"
+        required
+        [(ngModel)]="playerO"
+        name="name-o"
+        minlength="6"
+        maxlength="12"
+      />
+    </div>
+    <br />
+    <button
+      type="submit"
+      class="btn btn-success"
+      (click)="submitDetails(playerDetails)"
+      [disabled]="!playerDetails.form.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
