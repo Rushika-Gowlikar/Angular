@@ -113,14 +113,17 @@
       Submit
     </button>
   </form>
- 
+  <div *ngIf="isStart"  class="players-name">
+    <button class="playerName">Player X &nbsp;{{playerX}}</button>
+    <button class="playerName">Player X &nbsp;{{playerO}}</button>
+   </div>
   <div *ngIf="isStart" class="boxes" >
    
     <div class="c1" >
-      <div *ngFor="let box of boxes" class="box">{{box}}</div>
+      <div *ngFor="let box of boxes; let i= index" class="box" ><span (click)="squareChecked(i,box)" [ngClass]="{'fresh': box=='P'}" >{{box}}</span></div>
      
     </div>
-  </div>
+  </div> 
 
 
 

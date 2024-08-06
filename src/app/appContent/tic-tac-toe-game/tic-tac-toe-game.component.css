@@ -5,7 +5,7 @@
     border: 10px solid #e29304;
     border-radius: 5px;
   text-align: center;
-  padding: 145px;
+  padding: 90px;
 }
 
 input{
@@ -89,4 +89,23 @@ h1{
     height: calc(99% / 3);
     background-color: #9cdc9c;
     border: solid #df1212 1px;
+  }
+
+  .fresh{
+    color: #bfebb1;
+  }
+  .players-name{
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 4px;
+    gap: 303px;
+  }
+  .playerName{
+    padding: 11px 36px;
+    background-color: #405cbb;
+    color: orange;
+    font-size: larger;
+    border-radius: 55px;
+    border: 3px solid orange;
+
   }
