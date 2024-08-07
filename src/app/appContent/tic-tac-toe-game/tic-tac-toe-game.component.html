@@ -114,8 +114,8 @@
     </button>
   </form>
   <div *ngIf="isStart"  class="players-name">
-    <button class="playerName">Player X &nbsp;{{playerX}}</button>
-    <button class="playerName">Player O &nbsp;{{playerO}}</button>
+    <button class="playerName" [ngStyle]="onAndoff?{'background-color': 'blue'} : {'background-color': 'yellow', 'color': '#35a935','border': '3px solid'}">Player X &nbsp;{{playerX}}</button>
+    <button class="playerName" [ngStyle]="onAndoff?{'background-color': 'yellow', 'color': '#35a935','border': '3px solid'} : {'background-color': 'blue'}">Player O &nbsp;{{playerO}}</button>
    </div>
   <div *ngIf="isStart" class="boxes" >
    
