@@ -114,16 +114,19 @@
     </button>
   </form>
   <div *ngIf="isStart"  class="players-name">
-    <button class="playerName" [ngStyle]="onAndoff?{'background-color': 'blue'} : {'background-color': 'yellow', 'color': '#35a935','border': '3px solid'}">Player X &nbsp;{{playerX}}</button>
-    <button class="playerName" [ngStyle]="onAndoff?{'background-color': 'yellow', 'color': '#35a935','border': '3px solid'} : {'background-color': 'blue'}">Player O &nbsp;{{playerO}}</button>
+    <button class="playerName" [ngStyle]="onAndoff?{'background-color': 'blue'} : {'background-color': 'yellow', 'color': '#35a935','border': '3px solid'}" >Player X &nbsp;{{playerX}}</button>
+    <button class="playerName" [ngStyle]="onAndoff?{'background-color': 'yellow', 'color': '#35a935','border': '3px solid'} : {'background-color': 'blue'}" >Player O &nbsp;{{playerO}}</button>
    </div>
   <div *ngIf="isStart" class="boxes" >
    
     <div class="c1" >
-      <div *ngFor="let box of boxes; let i= index" class="box" ><span (click)="squareChecked(i,box)" [ngClass]="{'fresh': box=='P'}" >{{box}}</span></div>
-     
+      <div *ngFor="let box of boxes; let i= index" ><button class="box" (click)="squareChecked(i,box)" [ngClass]="{'fresh': box=='P'}" [disabled]="isDisabled">
+        {{box}}</button></div>
+   
     </div>
-  </div> 
+    
+  </div> <br>
+  <div *ngIf="isStart" class="winner">{{winner}}</div>
 
 
 

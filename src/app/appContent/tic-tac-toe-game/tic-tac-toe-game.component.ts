@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicTacToeGameComponent implements OnInit {
   reformat: string[];
-  onAndoff: boolean = false;
+  onAndoff: boolean;
   updated: any;
   isDisabled: boolean = false;
+  winner: string;
+  winnerName: any;
 
   constructor() {}
   playerDetails: any;
@@ -28,6 +30,37 @@ export class TicTacToeGameComponent implements OnInit {
     this.playerX = details.form.get('name-x').value;
     this.playerO = details.form.get('name-o').value;
   }
+
+  calculateWinner(boxes) {
+    let winnerIndices = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    for (let pattern of winnerIndices) {
+      let pos1 = boxes[pattern[0]];
+      let pos2 = boxes[pattern[1]];
+      let pos3 = boxes[pattern[2]];
+
+      if (pos1 != 'P' && pos2 != 'P' && pos3 != 'P') {
+        if (pos1 === pos2 && pos2 === pos3) {
+          if (pos1 == 'X') {
+            this.winnerName = this.playerX;
+          } else if (pos1 == 'O') {
+            this.winnerName = this.playerO;
+          }
+          this.winner = `Winner   ${pos2}  ${this.winnerName} `;
+          this.isDisabled = true;
+          break;
+        }
+      }
+    }
+  }
   squareChecked(i, box) {
     if (box == 'P') {
       this.onAndoff = !this.onAndoff;
@@ -37,6 +70,7 @@ export class TicTacToeGameComponent implements OnInit {
           this.boxes.splice(i, 1, value);
         }
       });
+      this.calculateWinner(this.boxes);
     }
   }
 }

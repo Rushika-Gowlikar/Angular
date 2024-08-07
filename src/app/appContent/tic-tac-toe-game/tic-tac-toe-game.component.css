@@ -61,15 +61,14 @@ h1{
  }*/
  .box{
 
-    padding: 13px;
-    color: #010f1e;
-    font-size: larger;
+  padding: 11px;
+  color: #6135ad;
+  font-size: larger;
+  border: none;
+  background-color: #9cdc9c;
 }
 
-.box:hover{
- background-color: rgb(199, 240, 116) !important;
-    
- }
+
  .boxes{
     display: flex;
     justify-content: center;
@@ -93,6 +92,7 @@ h1{
 
   .fresh{
     color: #bfebb1;
+   
   }
   .players-name{
     display: inline-flex;
@@ -109,3 +109,8 @@ h1{
     border: 3px solid orange;
 
   }
+.winner{
+  color: #6135ad;
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+}
