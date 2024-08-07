@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicTacToeGameComponent implements OnInit {
   reformat: string[];
-  onAndoff: boolean = true;
+  onAndoff: boolean = false;
   updated: any;
   isDisabled: boolean = false;
 
