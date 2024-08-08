@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { TableViewComponent } from './appContent/table-view/table-view.component';
+import { RockPaperScissorsComponent } from './appContent/rock-paper-scissors/rock-paper-scissors.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TableViewComponent } from './appContent/table-view/table-view.component
 
     TodoFormComponent,
     TableViewComponent,
+    RockPaperScissorsComponent,
   ],
   imports: [
     BrowserModule,

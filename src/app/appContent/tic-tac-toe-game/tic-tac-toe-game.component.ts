@@ -12,14 +12,17 @@ export class TicTacToeGameComponent implements OnInit {
   isDisabled: boolean = false;
   winner: string;
   winnerName: any;
-
-  constructor() {}
   playerDetails: any;
-  isStart: boolean = false;
+  isStart: boolean;
   playerO: any;
   playerX: any;
+  startRockGame: boolean = false;
   text = 'Submit Player Names To Start Game!';
   boxes = ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'];
+  ticTacToe: boolean = true;
+  rockGame: boolean;
+
+  constructor() {}
   ngOnInit(): void {}
   onSubmit(details) {
     this.isStart = true;
@@ -54,7 +57,7 @@ export class TicTacToeGameComponent implements OnInit {
           } else if (pos1 == 'O') {
             this.winnerName = this.playerO;
           }
-          this.winner = `Winner   ${pos2}  ${this.winnerName} `;
+          this.winner = `Winner   ${pos2}  ${this.winnerName.toUpperCase()} `;
           this.isDisabled = true;
           break;
         }
@@ -71,6 +74,15 @@ export class TicTacToeGameComponent implements OnInit {
         }
       });
       this.calculateWinner(this.boxes);
+    }
+  }
+  startGame(game) {
+    if (game === 'rps') {
+      this.ticTacToe = false;
+      this.rockGame = true;
+    } else if (game === 'ttt') {
+      this.ticTacToe = true;
+      this.rockGame = false;
     }
   }
 }

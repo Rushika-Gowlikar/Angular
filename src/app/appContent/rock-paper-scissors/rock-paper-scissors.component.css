@@ -1,0 +1,60 @@
+input{
+    width: 59%;
+    margin: 3px;
+    border: 3px solid rgb(120, 30, 181);
+    height: 34px;
+    border-radius: 4px;
+}
+
+input:hover{
+    width: 59%;
+    margin: 3px;
+    border: 3px solid rgb(72, 171, 221);
+    height: 34px;
+    border-radius: 4px;
+}
+
+label {
+color: rgb(90, 14, 115);
+font-size: larger;
+font-family: Geneva, Verdana, sans-serif;
+font-weight:bold ;
+}
+.picture{
+    display: inline-flex;
+    position: relative;
+    grid-gap: 10px;
+    gap: 10px;
+    left: 60px;
+}
+
+.hand{
+    text-align: center;
+    width: 106px;
+    height: 98px;
+    border-radius: 50%;
+    background-color: #4a957c;
+    font-size: 55px;
+}
+
+strong{
+    position: relative;
+    top: 111px;
+    right: 96px;
+}
+.players-name{
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 4px;
+    gap: 303px;
+  }
+
+  .playerName{
+    padding: 11px 36px;
+    background-color: #405cbb;
+    color: orange;
+    font-size: larger;
+    border-radius: 55px;
+    border: 3px solid orange;
+
+  }

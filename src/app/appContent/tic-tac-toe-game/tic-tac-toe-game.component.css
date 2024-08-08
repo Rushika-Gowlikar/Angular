@@ -114,3 +114,21 @@ h1{
   font-size: larger;
   font-family: 'Times New Roman', Times, serif;
 }
+.game-selection{
+  text-align: center;
+    background-color: lightblue;
+   
+    padding: 2px;
+    margin: 3px;
+    border-radius: 4px;
+    border: 9px solid #1282a7
+}
+
+select{
+  text-align: center;
+  word-wrap: normal;
+  width: 200px;
+  height: 36px;
+  border: 2px solid #28aeda;
+  border-radius: 4px;
+}

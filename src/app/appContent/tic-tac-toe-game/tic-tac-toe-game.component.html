@@ -1,134 +1,135 @@
+<div *ngIf="!isStart "
+     class="game-selection">
+  <h1>Select which game are you will to play</h1>
+  <form (ngSubmit)="startGame(game.value)">
+    <label for="selectLabel">Select an option:
+      <select name="selectLabel"
+              id="selectLabel"
+              #game>
+        <option value="ttt">Tic-Tac-Toe</option>
+        <option value="rps">Rock-Paper-Scissors</option>
+      </select>
+    </label><br>
+    <button class="btn btn-success m-2"
+            type="submit">Start</button>
+  </form>
+</div>
+
 <div class="container w-100 h-100">
-  <h1 class="title">{{ text }}</h1>
-  <form
-    #playerDetails="ngForm"
-    (ngSubmit)="onSubmit(playerDetails)"
-    *ngIf="!isStart"
-  >
+  <h1 class="title"
+      *ngIf="ticTacToe">{{ text }}</h1>
+
+  <form #playerDetails="ngForm"
+        (ngSubmit)="onSubmit(playerDetails)"
+        *ngIf="!isStart && ticTacToe">
     <div class="form-group">
       <label for="player-x">Player X</label>
-      <input
-        type="text"
-        id="player-x"
-        required
-        [(ngModel)]="playerX"
-        name="name-x"
-        minlength="6"
-        maxlength="12"
-        placeholder="Enter Player Name"
-        [ngClass]="{
+      <input type="text"
+             id="player-x"
+             required
+             [(ngModel)]="playerX"
+             name="name-x"
+             minlength="6"
+             maxlength="12"
+             placeholder="Enter Player Name"
+             [ngClass]="{
           'invalid-input':
             !playerDetails.form.get('name-x')?.valid &&
             playerDetails.form.get('name-x')?.touched
-        }"/>
-    
-      <div
-        *ngIf="
+        }" />
+
+      <div *ngIf="
           !playerDetails.form.get('name-x')?.valid &&
           playerDetails.form.get('name-x')?.touched
         "
-        class="error-text"
-      >
-        <span *ngIf="playerDetails.form.get('name-x').errors?.required"
-          >Mandatory Field</span
-        >
-        <span
-          *ngIf="
+           class="error-text">
+        <span *ngIf="playerDetails.form.get('name-x').errors?.required">Mandatory Field</span>
+        <span *ngIf="
             playerDetails.form.get('name-x').errors.minlength?.requiredLength
-          "
-        >
+          ">
           Characters should be greater than
           {{
-            playerDetails.form.get("name-x").errors.minlength?.requiredLength
-          }}</span
-        >
-        <span
-          *ngIf="
+          playerDetails.form.get("name-x").errors.minlength?.requiredLength
+          }}</span>
+        <span *ngIf="
             playerDetails.form.get('name-x').errors.maxlength?.requiredLength
-          "
-        >
+          ">
           Characters should be less than{{
-            playerDetails.form.get("name-x").errors.maxlength?.requiredLength
-          }}</span
-        >
+          playerDetails.form.get("name-x").errors.maxlength?.requiredLength
+          }}</span>
       </div>
     </div>
 
     <br />
     <div class="form-group">
       <label for="player-o">Player O</label>
-      <input
-        type="text"
-        id="player-o"
-        required
-        [(ngModel)]="playerO"
-        name="name-o"
-        minlength="6"
-        maxlength="12"
-        placeholder="Enter Player Name"
-        [ngClass]="{
+      <input type="text"
+             id="player-o"
+             required
+             [(ngModel)]="playerO"
+             name="name-o"
+             minlength="6"
+             maxlength="12"
+             placeholder="Enter Player Name"
+             [ngClass]="{
           'invalid-input':
             !playerDetails.form.get('name-o')?.valid &&
             playerDetails.form.get('name-o')?.touched
-        }"
-      />
-      <div
-        *ngIf="
+        }" />
+      <div *ngIf="
           !playerDetails.form.get('name-o')?.valid &&
           playerDetails.form.get('name-o')?.touched
         "
-        class="error-text"
-      >
-        <span *ngIf="playerDetails.form.get('name-o').errors?.required"
-          >Mandatory Field</span
-        >
+           class="error-text">
+        <span *ngIf="playerDetails.form.get('name-o').errors?.required">Mandatory Field</span>
 
-        <span
-          *ngIf="
+        <span *ngIf="
             playerDetails.form.get('name-o').errors.minlength?.requiredLength
-          "
-        >
+          ">
           Characters should be greater than
           {{
-            playerDetails.form.get("name-o").errors.minlength?.requiredLength
-          }}</span
-        >
-        <span
-          *ngIf="
+          playerDetails.form.get("name-o").errors.minlength?.requiredLength
+          }}</span>
+        <span *ngIf="
             playerDetails.form.get('name-o').errors.maxlength?.requiredLength
-          "
-        >
+          ">
           Characters should be less than{{
-            playerDetails.form.get("name-o").errors.maxlength?.requiredLength
-          }}</span
-        >
+          playerDetails.form.get("name-o").errors.maxlength?.requiredLength
+          }}</span>
       </div>
     </div>
     <br />
-    <button
-      type="submit"
-      class="btn btn-success"
-      [disabled]="!playerDetails.form.valid"
-    >
+    <button type="submit"
+            class="btn btn-success"
+            [disabled]="!playerDetails.form.valid">
       Submit
     </button>
   </form>
-  <div *ngIf="isStart"  class="players-name">
-    <button class="playerName" [ngStyle]="onAndoff?{'background-color': 'blue'} : {'background-color': 'yellow', 'color': '#35a935','border': '3px solid'}" >Player X &nbsp;{{playerX}}</button>
-    <button class="playerName" [ngStyle]="onAndoff?{'background-color': 'yellow', 'color': '#35a935','border': '3px solid'} : {'background-color': 'blue'}" >Player O &nbsp;{{playerO}}</button>
-   </div>
-  <div *ngIf="isStart" class="boxes" >
-   
-    <div class="c1" >
-      <div *ngFor="let box of boxes; let i= index" ><button class="box" (click)="squareChecked(i,box)" [ngClass]="{'fresh': box=='P'}" [disabled]="isDisabled">
-        {{box}}</button></div>
-   
+  <div *ngIf="isStart && ticTacToe"
+       class="players-name">
+    <button class="playerName"
+            [ngStyle]="onAndoff?{'background-color': 'blue'} : {'background-color': 'yellow', 'color': '#35a935','border': '3px solid'}">Player X
+      &nbsp;{{playerX | uppercase}}</button>
+    <button class="playerName"
+            [ngStyle]="onAndoff?{'background-color': 'yellow', 'color': '#35a935','border': '3px solid'} : {'background-color': 'blue'}">Player O
+      &nbsp;{{playerO | uppercase}}</button>
+  </div>
+  <div *ngIf="isStart"
+       class="boxes">
+
+    <div class="c1">
+      <div *ngFor="let box of boxes; let i= index"><button class="box"
+                (click)="squareChecked(i,box)"
+                [ngClass]="{'fresh': box=='P'}"
+                [disabled]="isDisabled">
+          {{box}}</button></div>
     </div>
-    
   </div> <br>
-  <div *ngIf="isStart" class="winner">{{winner}}</div>
+  <div *ngIf="isStart"
+       class="winner">{{winner}}</div>
 
-
-
+  <div *ngIf="rockGame">
+    <app-rock-paper-scissors></app-rock-paper-scissors>
+  </div>
 
 </div>
