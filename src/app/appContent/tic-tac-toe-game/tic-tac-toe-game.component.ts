@@ -17,18 +17,14 @@ export class TicTacToeGameComponent implements OnInit {
   playerO: any;
   playerX: any;
   startRockGame: boolean = false;
-  text = 'Submit Player Names To Start Game!';
   boxes = ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'];
   ticTacToe: boolean = true;
-  rockGame: boolean;
-
+  rockGame: boolean = false;
+  text: string;
   constructor() {}
   ngOnInit(): void {}
   onSubmit(details) {
     this.isStart = true;
-    this.text = this.isStart
-      ? 'let Start'
-      : 'Submit Player Names To Start Game!';
 
     this.playerX = details.form.get('name-x').value;
     this.playerO = details.form.get('name-o').value;
@@ -80,9 +76,11 @@ export class TicTacToeGameComponent implements OnInit {
     if (game === 'rps') {
       this.ticTacToe = false;
       this.rockGame = true;
+      this.isStart = false;
     } else if (game === 'ttt') {
       this.ticTacToe = true;
       this.rockGame = false;
+      window.location.reload();
     }
   }
 }

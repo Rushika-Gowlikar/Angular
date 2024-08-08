@@ -1,5 +1,4 @@
-<div *ngIf="!isStart "
-     class="game-selection">
+<div class="game-selection">
   <h1>Select which game are you will to play</h1>
   <form (ngSubmit)="startGame(game.value)">
     <label for="selectLabel">Select an option:
@@ -17,7 +16,7 @@
 
 <div class="container w-100 h-100">
   <h1 class="title"
-      *ngIf="ticTacToe">{{ text }}</h1>
+      *ngIf="!isStart && ticTacToe">Submit Player Names To Start Your Game! </h1>
 
   <form #playerDetails="ngForm"
         (ngSubmit)="onSubmit(playerDetails)"
@@ -105,8 +104,9 @@
       Submit
     </button>
   </form>
-  <div *ngIf="isStart && ticTacToe"
+  <div *ngIf="isStart && ticTacToe && !rockGame"
        class="players-name">
+
     <button class="playerName"
             [ngStyle]="onAndoff?{'background-color': 'blue'} : {'background-color': 'yellow', 'color': '#35a935','border': '3px solid'}">Player X
       &nbsp;{{playerX | uppercase}}</button>
@@ -114,7 +114,7 @@
             [ngStyle]="onAndoff?{'background-color': 'yellow', 'color': '#35a935','border': '3px solid'} : {'background-color': 'blue'}">Player O
       &nbsp;{{playerO | uppercase}}</button>
   </div>
-  <div *ngIf="isStart"
+  <div *ngIf="isStart && ticTacToe && !rockGame"
        class="boxes">
 
     <div class="c1">
@@ -125,10 +125,10 @@
           {{box}}</button></div>
     </div>
   </div> <br>
-  <div *ngIf="isStart"
+  <div *ngIf="isStart && ticTacToe && !rockGame"
        class="winner">{{winner}}</div>
 
-  <div *ngIf="rockGame">
+  <div *ngIf="rockGame && !ticTacToe ">
     <app-rock-paper-scissors></app-rock-paper-scissors>
   </div>
 

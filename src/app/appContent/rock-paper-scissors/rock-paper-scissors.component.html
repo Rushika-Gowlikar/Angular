@@ -7,28 +7,63 @@
                name="player-king"
                placeholder="Enter player name"
                [(ngModel)]="player"
+               minlength="2"
+               maxlength="8"
                required>
-      </label> <br>
+      </label>
+      <div *ngIf="
+      !game.form.get('player-king')?.valid &&
+      game.form.get('player-king')?.touched
+    "
+           class="error-text">
+        <span *ngIf="game.form.get('player-king').errors?.required">Mandatory Field</span>
+        <span *ngIf="
+    game.form.get('player-king').errors.minlength?.requiredLength
+      ">
+          Characters should be greater than
+          {{
+          game.form.get('player-king').errors.minlength?.requiredLength
+          }}</span>
+        <span *ngIf="
+    game.form.get('player-king').errors.maxlength?.requiredLength
+      ">
+          Characters should be less than{{
+          game.form.get('player-king').errors.maxlength?.requiredLength
+          }}</span>
+      </div><br>
       <button type="submit"
               class="btn btn-success m-3"
               (click)="submitPlayer(game)"
               [disabled]="!game.form.valid">Submit</button>
+
     </form>
   </div>
 </div>
 <div *ngIf="playerName">
+  <h1>Let Start!</h1>
+  <div class="score-board">
+    {{playerName | uppercase}} vs COMPUTER
+  </div>
   <div class="players-name">
-    <button class="playerName">{{playerName | uppercase }}</button>
-    <button class="playerName">COMPUTER</button>
+    <button class="playerName"
+            [ngClass]="{'playerName1': started}">{{playerName
+      | uppercase }}</button>
+    <button class="playerName"
+            [ngClass]="{'playerName1': started}">COMPUTER</button>
   </div>
   <br />
   <div class="picture">
-    <button class="hand">✊</button><br>
+    <button class="hand"
+            (click)="startGame('Rock')">✊</button><br>
     <strong>ROCK</strong>
-    <button class="hand">🖐️</button><br>
+    <button class="hand"
+            (click)="startGame('Paper')">🖐️</button><br>
     <strong>PAPER</strong>
-    <button class="hand">✌️ </button><br>
+    <button class="hand"
+            (click)="startGame('Scissors')">✌️</button><br>
     <strong>SCISSORS</strong>
-  </div>
-
+  </div><br><br>
+  <h1 class="result">
+    {{finalResult}}
+  </h1>
 </div>
