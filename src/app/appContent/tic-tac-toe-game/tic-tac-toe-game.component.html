@@ -127,7 +127,11 @@
   </div> <br>
   <div *ngIf="isStart && ticTacToe && !rockGame"
        class="winner">{{winner}}</div>
-
+  <button *ngIf="isStart && ticTacToe && !rockGame"
+          class="btn btn-primary"
+          (click)="restartGame(boxes)">
+    Restart
+  </button>
   <div *ngIf="rockGame && !ticTacToe ">
     <app-rock-paper-scissors></app-rock-paper-scissors>
   </div>

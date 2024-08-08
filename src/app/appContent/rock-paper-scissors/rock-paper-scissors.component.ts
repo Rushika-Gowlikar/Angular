@@ -54,7 +54,7 @@ export class RockPaperScissorsComponent implements OnInit {
       } else if (computer === 'Paper') {
         this.result = 'Win';
       } else if (computer === 'Scissors') {
-        this.result = 'Loss';
+        this.result = 'Tie';
       }
     }
     setTimeout(() => {

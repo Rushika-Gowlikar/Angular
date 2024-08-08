@@ -54,8 +54,7 @@ export class TicTacToeGameComponent implements OnInit {
             this.winnerName = this.playerO;
           }
           this.winner = `Winner   ${pos2}  ${this.winnerName.toUpperCase()} `;
-          this.isDisabled = true;
-          break;
+          this.isDisabled = false;
         }
       }
     }
@@ -70,6 +69,13 @@ export class TicTacToeGameComponent implements OnInit {
         }
       });
       this.calculateWinner(this.boxes);
+    }
+  }
+  restartGame(boxes) {
+    this.isDisabled = false;
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i] = 'P';
+      console.log(boxes);
     }
   }
   startGame(game) {
