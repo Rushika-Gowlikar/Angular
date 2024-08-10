@@ -11,6 +11,11 @@ export class RockPaperScissorsComponent implements OnInit {
   result: string;
   finalResult: any;
   started: boolean = false;
+  score = {
+    win: 0,
+    loss: 0,
+    tie: 0,
+  };
   constructor() {}
   ngOnInit(): void {}
   submitPlayer(player) {
@@ -34,27 +39,36 @@ export class RockPaperScissorsComponent implements OnInit {
     this.result = '';
     if (player === 'Rock') {
       if (computer === 'Rock') {
-        this.result = 'Tie';
+        this.result = 'you lost your game in a draw';
+        this.score.tie += 1;
       } else if (computer === 'Paper') {
-        this.result = 'Loss';
+        this.result = 'you lost the game';
+        this.score.loss += 1;
       } else if (computer === 'Scissors') {
-        this.result = 'Win';
+        this.result = 'you win the game';
+        this.score.win += 1;
       }
     } else if (player === 'Paper') {
       if (computer === 'Rock') {
-        this.result = 'Win';
+        this.result = 'you win the game';
+        this.score.win += 1;
       } else if (computer === 'Paper') {
-        this.result = 'Tie';
+        this.result = 'you lost your game in a draw';
+        this.score.tie += 1;
       } else if (computer === 'Scissors') {
-        this.result = 'Loss';
+        this.result = 'you lost the game';
+        this.score.loss += 1;
       }
     } else if (player === 'Scissors') {
       if (computer === 'Rock') {
-        this.result = 'Loss';
+        this.result = 'you lost the game';
+        this.score.loss += 1;
       } else if (computer === 'Paper') {
-        this.result = 'Win';
+        this.result = 'you win the game';
+        this.score.win += 1;
       } else if (computer === 'Scissors') {
-        this.result = 'Tie';
+        this.result = 'you lost your game in a draw';
+        this.score.tie += 1;
       }
     }
     setTimeout(() => {

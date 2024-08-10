@@ -41,9 +41,10 @@
 </div>
 <div *ngIf="playerName">
   <h1>Let Start!</h1>
-  <div class="score-board">
-    {{playerName | uppercase}} vs COMPUTER
-  </div>
+  <span class="score-board">
+    {{playerName | uppercase}} vs COMPUTER &nbsp;
+    Win: {{score.win}} , Loss: {{score.loss}} , Tie: {{score.tie}}
+  </span><br><br>
   <div class="players-name">
     <button class="playerName"
             [ngClass]="{'playerName1': started}">{{playerName
