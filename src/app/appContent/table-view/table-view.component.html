@@ -1,4 +1,4 @@
-<div class="container table-view" *ngIf="storedData; else emptyPage">
+<div class="container table-view" *ngIf="products; else emptyPage">
   <div class="headers">
     <h2 class="table-title">TABLE VIEW</h2>
     <div class="input-group w-50">
@@ -12,28 +12,28 @@
       <button class="btn btn-secondary" (click)="sort('asc')">⬆️</button>
       <button class="btn btn-secondary" (click)="sort('dsc')">⬇️</button>
     </div>
-    <button class="btn add">Add ROW DATA</button>
+    <button class="btn add" disabled >Add ROW DATA</button>
   </div>
   <table class="table">
     <thead>
       <tr>
         <th>ID</th>
-        <th>USER_ID</th>
-        <th>TITLE</th>
-        <th>CONTENT</th>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>DESCRIPTION</th>
         <th></th>
         <th></th>
       </tr>
     </thead>
     <tbody class="text-center">
-      <tr *ngFor="let data of storedData">
+      <tr *ngFor="let data of products">
         <td>{{ data.id }}</td>
-        <td>{{ data.userId }}</td>
-        <td>{{ data.title }}</td>
-        <td>{{ data.body }}</td>
-        <td><button class="btn btn-primary">Edit</button></td>
+        <td>{{ data.name}}</td>
+        <td>{{ data.price}}</td>
+        <td>{{data.product_info}}</td>
+       <td><button class="btn btn-primary" disabled>Edit</button></td>
         <td>
-          <button class="btn btn-danger" (click)="deleteData(data)">
+          <button class="btn btn-danger" (click)="deleteData(data)" disabled>
             Delete
           </button>
         </td>

@@ -11,15 +11,16 @@ export class TableViewComponent implements OnInit {
   filterProducts: any;
   searchInput: any;
   details: any;
-
+  products:any;
   constructor(private service: AppContentService) {}
 
   ngOnInit(): void {
-    this.getTableDetails();
+    // this.getTableDetails();
+    this.loadProducts();
   }
   getfilterData() {
-    this.storedData = this.details.filter((p: any) => {
-      return p.title.toLowerCase().includes(this.searchInput.toLowerCase());
+    this.products = this.details.filter((p: any) => {
+      return p.name.toLowerCase().includes(this.searchInput.toLowerCase());
     });
   }
   deleteData(data) {
@@ -27,19 +28,46 @@ export class TableViewComponent implements OnInit {
   }
   sort(order: any) {
     if (order == 'asc') {
-      this.storedData.sort((p1: any, p2: any) => {
-        return p1.title > p2.title ? 1 : -1;
+      this.products.sort((p1: any, p2: any) => {
+        return p1.name > p2.name ? 1 : -1;
       });
     } else if (order == 'dsc') {
-      this.storedData.sort((p1: any, p2: any) => {
-        return p1.title > p2.title ? -1 : 1;
+      this.products.sort((p1: any, p2: any) => {
+        return p1.name > p2.name ? -1 : 1;
       });
     }
   }
-  getTableDetails() {
-    this.service.getContent().subscribe((data) => {
-      this.storedData = data;
+  // getTableDetails() {
+  //   this.service.getContent().subscribe((data) => {
+  //     this.storedData = data;
+  //     this.details = data;
+  //   });
+  // }
+
+
+  loadProducts() {
+    this.service.getProducts().subscribe((data)=>{
+      this.products =data;
       this.details = data;
-    });
+     
+    }
+      // products =>  console.log(products),
+      // error => console.error('Error loading products', error)
+    );
   }
+
+  // addProduct() {
+  //   const newProduct = { name: 'New Product', price: 100 };
+  //   this.service.createProduct(newProduct).subscribe(
+  //     product => this.products.push(product),
+  //     error => console.error('Error adding product', error)
+  //   );
+  // }
+
+  // deleteProduct(id: number) {
+  //   this.service.deleteProduct(id).subscribe(
+  //     () => this.products = this.products.filter(p => p.id !== id),
+  //     error => console.error('Error deleting product', error)
+  //   );
+  // }
 }
