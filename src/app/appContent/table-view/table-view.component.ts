@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppContentService } from '../app-content.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EditProductDetailsComponent } from '../edit-product-details/edit-product-details.component';
 
 @Component({
   selector: 'app-table-view',
@@ -11,8 +13,8 @@ export class TableViewComponent implements OnInit {
   filterProducts: any;
   searchInput: any;
   details: any;
-  products:any;
-  constructor(private service: AppContentService) {}
+  products: any;
+  constructor(private service: AppContentService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     // this.getTableDetails();
@@ -44,13 +46,12 @@ export class TableViewComponent implements OnInit {
   //   });
   // }
 
-
   loadProducts() {
-    this.service.getProducts().subscribe((data)=>{
-      this.products =data;
-      this.details = data;
-     
-    }
+    this.service.getProducts().subscribe(
+      (data) => {
+        this.products = data;
+        this.details = data;
+      }
       // products =>  console.log(products),
       // error => console.error('Error loading products', error)
     );
@@ -70,4 +71,25 @@ export class TableViewComponent implements OnInit {
   //     error => console.error('Error deleting product', error)
   //   );
   // }
+  // editDetails(data) {
+  //   const editProduct = {
+  //     name: data.name,
+  //     price: data.price,
+  //     product_info: data.product_info,
+  //   };
+  //   this.service
+  //     .updateProduct(data.id, editProduct)
+  //     .subscribe
+  //     // product => this.products.push(product),
+  //     // error => console.error('Error adding product', error)
+  //     ();
+  // }
+
+  openDialog(editDetails) {
+    let dialogRef = this.dialog.open(EditProductDetailsComponent, {
+      width: '550px',
+      height: '550px',
+      data: editDetails,
+    });
+  }
 }

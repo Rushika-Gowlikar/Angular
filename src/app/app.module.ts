@@ -19,6 +19,9 @@ import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { TableViewComponent } from './appContent/table-view/table-view.component';
 import { RockPaperScissorsComponent } from './appContent/rock-paper-scissors/rock-paper-scissors.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditProductDetailsComponent } from './appContent/edit-product-details/edit-product-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { RockPaperScissorsComponent } from './appContent/rock-paper-scissors/roc
     TodoFormComponent,
     TableViewComponent,
     RockPaperScissorsComponent,
+    EditProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,8 @@ import { RockPaperScissorsComponent } from './appContent/rock-paper-scissors/roc
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

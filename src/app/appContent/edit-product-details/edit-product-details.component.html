@@ -1,0 +1,27 @@
+<div class="dialog">
+    <h1>Update Product Details</h1>
+    <hr>
+    <div class="block">
+        <form #updateForm="ngForm">
+            <label for="name">PRODUCT NAME
+                <input id="name"
+                       class="form-control"
+                       value="{{name}}" />
+            </label><br><br>
+            <label for="price">PRODUCT PRICE
+                <input id="price"
+                       class="form-control"
+                       value="{{price}}" />
+            </label><br><br>
+            <label for="description">PRODUCT DESCRIPTION
+                <textarea id="description"
+                          class="form-control"
+                          value="{{description}}"></textarea>
+            </label><br><br>
+            <button class="btn btn-danger"
+                    (click)="closeDialog()">Cancel</button>
+            <button class="btn btn-success"
+                    disabled>Update</button>
+        </form>
+    </div>
+</div>

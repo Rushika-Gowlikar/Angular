@@ -10,8 +10,26 @@ import { delay } from 'rxjs/operators';
 export class AppContentService {
   constructor(private http: HttpClient) {}
   private products: Product[] = [
-    { id: 1, name: 'Head Phone', price: 500, product_info: 'Headphones are a pair of small loudspeaker drivers worn on or around the head over a user ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. '},
-    { id: 2, name: 'Laptop', price: 75000, product_info: 'A laptop computer or notebook computer' },
+    {
+      id: 1,
+      name: 'Head Phone',
+      price: 500,
+      product_info:
+        'Headphones are a pair of small loudspeaker drivers worn on or around the head over a user ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. ',
+    },
+    {
+      id: 2,
+      name: 'Laptop',
+      price: 75000,
+      product_info: 'A laptop computer or notebook computer',
+    },
+    {
+      id: 3,
+      name: 'Mobile Phone',
+      price: 60000,
+      product_info:
+        'A mobile phone is a personal communication device used to make and receive calls, send and receive messages, access the internet and perform other tasks via a wireless connection. ',
+    },
   ];
   added: any = [];
   setTodos(todo) {
@@ -30,8 +48,8 @@ export class AppContentService {
   deleteContent(id) {
     return this.http.get('https://jsonplaceholder.typicode.com/posts/' + id);
   }
-   // Create
-   createProduct(product: Omit<Product, 'id'>): Observable<Product> {
+  // Create
+  createProduct(product: Omit<Product, 'id'>): Observable<Product> {
     const newProduct = { ...product, id: this.getNextId() };
     this.products.push(newProduct);
     return of(newProduct).pipe(delay(500)); // Simulate network delay
@@ -44,15 +62,18 @@ export class AppContentService {
 
   // Read (single)
   getProduct(id: number): Observable<Product> {
-    const product = this.products.find(p => p.id === id);
-    return product ? of(product).pipe(delay(500)) : throwError('Product not found');
+    const product = this.products.find((p) => p.id === id);
+    return product
+      ? of(product).pipe(delay(500))
+      : throwError('Product not found');
   }
 
   // Update
   updateProduct(id: number, updates: Partial<Product>): Observable<Product> {
-    const index = this.products.findIndex(p => p.id === id);
+    const index = this.products.findIndex((p) => p.id === id);
     if (index !== -1) {
       this.products[index] = { ...this.products[index], ...updates };
+      console.log(updates);
       return of(this.products[index]).pipe(delay(500));
     }
     return throwError('Product not found');
@@ -60,7 +81,7 @@ export class AppContentService {
 
   // Delete
   deleteProduct(id: number): Observable<void> {
-    const index = this.products.findIndex(p => p.id === id);
+    const index = this.products.findIndex((p) => p.id === id);
     if (index !== -1) {
       this.products.splice(index, 1);
       return of(void 0).pipe(delay(500));
@@ -69,6 +90,6 @@ export class AppContentService {
   }
 
   private getNextId(): number {
-    return Math.max(...this.products.map(p => p.id)) + 1;
+    return Math.max(...this.products.map((p) => p.id)) + 1;
   }
 }
