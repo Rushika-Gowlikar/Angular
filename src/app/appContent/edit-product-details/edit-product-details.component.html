@@ -6,22 +6,25 @@
             <label for="name">PRODUCT NAME
                 <input id="name"
                        class="form-control"
-                       value="{{name}}" />
+                       name="product_name"
+                       [(ngModel)]="name" />
             </label><br><br>
             <label for="price">PRODUCT PRICE
                 <input id="price"
                        class="form-control"
-                       value="{{price}}" />
+                       name="product_price"
+                       [(ngModel)]="price" />
             </label><br><br>
             <label for="description">PRODUCT DESCRIPTION
                 <textarea id="description"
                           class="form-control"
-                          value="{{description}}"></textarea>
+                          name="product_description"
+                          [(ngModel)]="description"></textarea>
             </label><br><br>
             <button class="btn btn-danger"
                     (click)="closeDialog()">Cancel</button>
             <button class="btn btn-success"
-                    disabled>Update</button>
+                    (click)="submitDetails(updateForm)">Update</button>
         </form>
     </div>
 </div>

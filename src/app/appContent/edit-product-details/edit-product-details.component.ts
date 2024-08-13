@@ -26,4 +26,7 @@ export class EditProductDetailsComponent implements OnInit {
     this.dialogRef.close();
     console.log(this.dialogRef.close());
   }
+  submitDetails(updateDetails) {
+    console.log(updateDetails);
+  }
 }
