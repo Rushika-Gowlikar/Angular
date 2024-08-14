@@ -7,24 +7,28 @@
                 <input id="name"
                        class="form-control"
                        name="product_name"
-                       [(ngModel)]="name" />
+                       [(ngModel)]="name"
+                       required />
             </label><br><br>
             <label for="price">PRODUCT PRICE
                 <input id="price"
                        class="form-control"
                        name="product_price"
-                       [(ngModel)]="price" />
+                       [(ngModel)]="price"
+                       required />
             </label><br><br>
             <label for="description">PRODUCT DESCRIPTION
                 <textarea id="description"
                           class="form-control"
                           name="product_description"
-                          [(ngModel)]="description"></textarea>
+                          [(ngModel)]="description"
+                          required></textarea>
             </label><br><br>
             <button class="btn btn-danger"
                     (click)="closeDialog()">Cancel</button>
             <button class="btn btn-success"
-                    (click)="submitDetails(updateForm)">Update</button>
+                    [disabled]="!updateForm.form.valid"
+                    (click)="submitDetails(id)">Update</button>
         </form>
     </div>
 </div>
