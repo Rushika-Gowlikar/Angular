@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppContentService } from '../app-content.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProductDetailsComponent } from '../edit-product-details/edit-product-details.component';
+import { AddTableRowComponent } from '../add-table-row/add-table-row.component';
 
 @Component({
   selector: 'app-table-view',
@@ -90,6 +91,12 @@ export class TableViewComponent implements OnInit {
       width: '550px',
       height: '550px',
       data: editDetails,
+    });
+  }
+  openAddDetails() {
+    let dialogRef = this.dialog.open(AddTableRowComponent, {
+      width: '550px',
+      height: '550px',
     });
   }
 }

@@ -44,3 +44,8 @@ button{
   ::-webkit-scrollbar-thumb:hover {
     background: #131212; 
   }
+
+  .close-icon{
+    position: relative;
+    float: right;
+}

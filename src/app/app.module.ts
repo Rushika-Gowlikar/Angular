@@ -22,6 +22,7 @@ import { RockPaperScissorsComponent } from './appContent/rock-paper-scissors/roc
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditProductDetailsComponent } from './appContent/edit-product-details/edit-product-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddTableRowComponent } from './appContent/add-table-row/add-table-row.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TableViewComponent,
     RockPaperScissorsComponent,
     EditProductDetailsComponent,
+    AddTableRowComponent,
   ],
   imports: [
     BrowserModule,
