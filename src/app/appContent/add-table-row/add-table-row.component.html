@@ -1,5 +1,35 @@
 <div>
     <span class="close-icon"
           (click)="closeDialog()"><mat-icon>close</mat-icon></span>
-    <p>add-table-row works!</p>
+    <h1>Add Product Details</h1>
+
+    <hr>
+    <div class="block">
+        <form #addForm="ngForm">
+            <label for="name">PRODUCT NAME
+                <input type="text"
+                       class="form-control"
+                       name="product_name"
+                       [(ngModel)]="name">
+            </label><br><br>
+            <label for="price">PRODUCT PRICE
+                <input type="number"
+                       class="form-control"
+                       name="product_price"
+                       [(ngModel)]="price">
+            </label><br><br>
+            <label for="description">PRODUCT DESCRIPTION
+                <textarea type="text"
+                          class="form-control"
+                          name="product_description"
+                          [(ngModel)]="description"></textarea>
+            </label><br><br>
+            <div>
+                <button class="btn btn-danger"
+                        disabled>Cancel</button>
+                <button class="btn btn-success"
+                        disabled>Add</button>
+            </div>
+        </form>
+    </div>
 </div>

@@ -8,7 +8,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AddTableRowComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<AddTableRowComponent>) {}
-
+  name: string;
+  price: number;
+  description: string;
   ngOnInit(): void {}
   closeDialog() {
     this.dialogRef.close();

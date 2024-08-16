@@ -2,3 +2,29 @@
     position: relative;
     float: right;
 }
+.dialog{
+    width: 99%;
+  
+}
+::ng-deep .mat-dialog-container{
+  
+   width: 200% !important;
+}
+.block{
+ height: 400px;
+ overflow: scroll;
+ overflow-y: auto;
+ overflow-x: hidden;
+}
+::ng-deep .form-control{
+    width: 237%;
+}
+textarea{
+    height: 100px;
+    resize: none;
+}
+button{
+    position: relative;
+    float: right;
+   margin:5px;
+}

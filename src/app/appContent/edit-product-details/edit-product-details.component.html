@@ -8,6 +8,7 @@
         <form #updateForm="ngForm">
             <label for="name">PRODUCT NAME
                 <input id="name"
+                       type="text"
                        class="form-control"
                        name="product_name"
                        [(ngModel)]="name"
@@ -15,6 +16,7 @@
             </label><br><br>
             <label for="price">PRODUCT PRICE
                 <input id="price"
+                       type="number"
                        class="form-control"
                        name="product_price"
                        [(ngModel)]="price"
@@ -22,6 +24,7 @@
             </label><br><br>
             <label for="description">PRODUCT DESCRIPTION
                 <textarea id="description"
+                          type="text"
                           class="form-control"
                           name="product_description"
                           [(ngModel)]="description"
