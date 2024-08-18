@@ -27,7 +27,8 @@ export class TableViewComponent implements OnInit {
     });
   }
   deleteData(data) {
-    this.service.deleteContent(data.id).subscribe((data) => {});
+    let remove = this.products.indexOf(data);
+    this.products.splice(remove, 1);
   }
   sort(order: any) {
     if (order == 'asc') {
