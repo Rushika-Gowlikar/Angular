@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import * as BOOKJSON from '../../../app/items.json';
+
 @Component({
-  selector: 'app-book-reader',
-  templateUrl: './book-reader.component.html',
-  styleUrls: ['./book-reader.component.css'],
+  selector: 'app-books',
+  templateUrl: './books.component.html',
+  styleUrls: ['./books.component.css'],
 })
-export class BookReaderComponent implements OnInit {
+export class BooksComponent implements OnInit {
   list: any;
   constructor() {}
 

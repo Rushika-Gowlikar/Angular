@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
     window.location.href = '/card-view';
   }
   goToReader() {
-    window.location.href = '/reader';
+    window.location.href = '/book';
   }
   goToGame() {
     window.location.href = '/game';
