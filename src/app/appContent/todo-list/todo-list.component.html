@@ -1,5 +1,10 @@
 <div class="boxes">
-  <div class="container" *ngFor="let item of quotes | keyvalue">
-    <span>{{ item.value["text"] }}</span>
+  <!-- <div class="container"
+  *ngFor="let item of quotes | keyvalue">
+<span>{{ item.value['title'] }}</span>
+</div> -->
+  <div class="container"
+       *ngFor="let item of quotes">
+    <span>{{ item.title }}</span>
   </div>
 </div>

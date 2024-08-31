@@ -40,7 +40,7 @@ export class AppContentService {
   }
 
   getMethod() {
-    return this.http.get('https://type.fit/api/quotes');
+    return this.http.get('https://dummyjson.com/products');
   }
   getContent() {
     return this.http.get('https://jsonplaceholder.typicode.com/posts');

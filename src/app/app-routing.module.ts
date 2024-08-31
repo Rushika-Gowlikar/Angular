@@ -10,7 +10,8 @@ import { TableViewComponent } from './appContent/table-view/table-view.component
 const routes: Routes = [
   {
     path: '',
-    component: MenuComponent,
+    redirectTo: '/menu',
+    pathMatch: 'full',
   },
   {
     path: 'menu',

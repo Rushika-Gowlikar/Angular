@@ -7,17 +7,17 @@ import { AppContentService } from '../app-content.service';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoFormComponent implements OnInit {
-  quotes: Object;
+  quotes: any;
 
   constructor(private service: AppContentService) {}
   todo: any = [];
   ngOnInit(): void {
     this.getQuots();
   }
-
   getQuots() {
     this.service.getMethod().subscribe((data) => {
-      this.quotes = data;
+      this.quotes = data['products'];
+      console.log(this.quotes);
     });
   }
 }

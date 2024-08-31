@@ -88,14 +88,14 @@ export class TableViewComponent implements OnInit {
   // }
 
   openDialog(editDetails) {
-    let dialogRef = this.dialog.open(EditProductDetailsComponent, {
+    this.dialog.open(EditProductDetailsComponent, {
       width: '550px',
       height: '550px',
       data: editDetails,
     });
   }
   openAddDetails() {
-    let dialogRef = this.dialog.open(AddTableRowComponent, {
+    this.dialog.open(AddTableRowComponent, {
       width: '550px',
       height: '550px',
     });
