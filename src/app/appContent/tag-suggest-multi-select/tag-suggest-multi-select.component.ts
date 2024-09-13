@@ -1,4 +1,11 @@
-import { Component, DoCheck, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  DoCheck,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 @Component({
   selector: 'pp-tag-suggest',
@@ -7,6 +14,7 @@ import { Component, DoCheck, Input, OnInit } from '@angular/core';
 })
 export class TagSuggestMultiSelectComponent implements OnInit, DoCheck {
   @Input() list: any[];
+  @Output() inputValue = new EventEmitter<any>();
   showDropDown: boolean;
   unique: any[];
   checkedList = [];
@@ -16,7 +24,7 @@ export class TagSuggestMultiSelectComponent implements OnInit, DoCheck {
   constructor() {}
 
   ngDoCheck() {
-    console.log(this.list);
+    // console.log(this.list);
   }
   ngOnInit(): void {
     if (this.unique != null) {
@@ -98,8 +106,8 @@ export class TagSuggestMultiSelectComponent implements OnInit, DoCheck {
       (o) => this.allCheck.indexOf(o) === -1
     );
     this.unique = this.finalVal1.concat(this.finalVal2);
+    this.inputValue.emit(this.unique);
 
-    console.log(this.unique.length);
     if (this.unique.length === 4) {
       for (var i = 0; i < this.list.length; i++) {
         if (this.list[i].name === 'Select All') {

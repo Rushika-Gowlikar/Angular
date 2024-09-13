@@ -1,32 +1,26 @@
 <div class="container">
   <div (mouseleave)="showDropDown = false">
-    <button class="txt" (click)="showDropDown = !showDropDown">
-      <span *ngIf="unique.length > 0"
-        ><i>Selected {{ unique }}</i></span
-      >
+    <button class="txt"
+            (click)="showDropDown = !showDropDown">
+      <span *ngIf="unique.length > 0"><i>Selected {{ unique }}</i></span>
       <span *ngIf="unique.length === 0"><i>To Be Select</i></span>
     </button>
 
     <div *ngIf="showDropDown">
-      <label *ngFor="let a of list" class="dropdown-content">
-        <input
-          type="checkbox"
-          (change)="getSelectedValue(a.checked, a.name)"
-          [(ngModel)]="a.checked"
-        />
-        <span
-          [ngStyle]="{
+      <label *ngFor="let a of list"
+             class="dropdown-content">
+        <input type="checkbox"
+               (change)="getSelectedValue(a.checked, a.name)"
+               [(ngModel)]="a.checked" />
+        <span [ngStyle]="{
             'background-color': a.checked ? '#F6F7F8' : '#d6ecbf',
             color: a.checked ? '#4b4bc7' : 'black'
-          }"
-          >{{ a.name }}</span
-        >
+          }">{{ a.name }}</span>
       </label>
     </div>
-    <button class="button" *ngFor="let d of unique">
-      <span (click)="removeStatus(d)"
-        >{{ d }} <mat-icon class="close">close</mat-icon></span
-      >
+    <button class="button"
+            *ngFor="let d of unique">
+      <span (click)="removeStatus(d)">{{ d }} <mat-icon class="close">close</mat-icon></span>
     </button>
   </div>
 </div>

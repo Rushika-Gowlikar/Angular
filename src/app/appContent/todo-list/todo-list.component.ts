@@ -14,10 +14,10 @@ export class TodoFormComponent implements OnInit {
   ngOnInit(): void {
     this.getQuots();
   }
+
   getQuots() {
     this.service.getMethod().subscribe((data) => {
       this.quotes = data['products'];
-      console.log(this.quotes);
     });
   }
 }

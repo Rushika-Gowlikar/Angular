@@ -1,5 +1,6 @@
 <div *ngIf="list">
-  <pp-tag-suggest [list]="list"></pp-tag-suggest>
+  <pp-tag-suggest [list]="list"
+                  (inputValue)="output($event)"></pp-tag-suggest>
 </div>
 
 <mat-icon class="arrow"
